@@ -1,0 +1,176 @@
+{
+  "EscrowRegistry": {
+    "defaultAddress": "",
+    "tabName": "🏠 Rental Escrow",
+    "sendFunctions": {
+      "sendCreateAgreement": {
+        "tabName": "📝 1. Create New Agreement",
+        "params": {
+          "value": {
+            "fieldTitle": "💰 Transaction Fee (TON)"
+          },
+          "tenant": {
+            "fieldTitle": "🏘️ Tenant Wallet Address"
+          },
+          "depositAmount": {
+            "fieldTitle": "💵 Security Deposit (TON)"
+          },
+          "rentAmount": {
+            "fieldTitle": "🏠 Monthly Rent (TON)"
+          },
+          "startDate": {
+            "fieldTitle": "📅 Lease Start Date (Unix timestamp - use current time)"
+          },
+          "termLength": {
+            "fieldTitle": "⏱️ Lease Duration (30 days = 2,592,000 seconds)"
+          }
+        }
+      },
+      "sendAcceptAgreement": {
+        "tabName": "✅ 2. Accept Agreement (Tenant)",
+        "params": {
+          "value": {
+            "fieldTitle": "💰 Transaction Fee (TON)",
+            "overrideWithDefault": true
+          },
+          "agreementId": {
+            "fieldTitle": "🆔 Agreement ID"
+          }
+        }
+      },
+      "sendDepositReceived": {
+        "tabName": "💳 3. Confirm Deposit Received",
+        "params": {
+          "value": {
+            "fieldTitle": "💰 Transaction Fee (TON)",
+            "overrideWithDefault": true
+          },
+          "agreementId": {
+            "fieldTitle": "🆔 Agreement ID"
+          },
+          "amount": {
+            "fieldTitle": "💵 Deposit Amount (TON)"
+          }
+        }
+      },
+      "sendClaimAtTermEnd": {
+        "tabName": "🎉 4. Claim at Lease End",
+        "params": {
+          "value": {
+            "fieldTitle": "💰 Transaction Fee (TON)",
+            "overrideWithDefault": true
+          },
+          "agreementId": {
+            "fieldTitle": "🆔 Agreement ID"
+          }
+        }
+      },
+      "sendCancelAgreement": {
+        "tabName": "❌ Cancel Agreement",
+        "params": {
+          "value": {
+            "fieldTitle": "💰 Transaction Fee (TON)"
+          },
+          "agreementId": {
+            "fieldTitle": "🆔 Agreement ID"
+          }
+        }
+      },
+      "sendSetPaused": {
+        "tabName": "⚠️ Admin: Pause Contract",
+        "params": {
+          "value": {
+            "fieldTitle": "💰 Transaction Fee (TON)"
+          },
+          "paused": {
+            "fieldTitle": "🔒 Pause Contract Operations"
+          }
+        }
+      }
+    },
+    "getFunctions": {
+      "getGetAgreement": {
+        "tabName": "🔍 View Agreement Details",
+        "params": {
+          "agreementId": {
+            "fieldTitle": "🆔 Agreement ID"
+          }
+        },
+        "outNames": {
+          "0": "📋 Agreement Information"
+        }
+      },
+      "getGetAgreementCounter": {
+        "tabName": "📊 Total Agreements Count",
+        "params": {},
+        "outNames": {
+          "0": "📈 Total Number of Agreements"
+        }
+      },
+      "getGetContractInfo": {
+        "tabName": "ℹ️ Contract Information",
+        "params": {},
+        "outNames": {
+          "0": "🏢 Contract Details & Status"
+        }
+      },
+      "getGetAgreementsByStatus": {
+        "tabName": "📂 Filter by Agreement Status",
+        "params": {
+          "status": {
+            "fieldTitle": "📌 Status (0=Created, 1=Accepted, 2=Deposit Received, 3=Staked, 4=Completed, 5=Cancelled)"
+          }
+        },
+        "outNames": {
+          "0": "📑 Filtered Agreements List"
+        }
+      }
+    },
+    "definedTypes": {
+      "EscrowRegistryConfig": {
+        "shownName": "🏠 Rental Escrow Configuration",
+        "properties": {
+          "id": {
+            "fieldTitle": "🆔 Registry Contract ID"
+          }
+        }
+      }
+    }
+  },
+  "Taas": {
+    "defaultAddress": "",
+    "tabName": "⚙️ TaaS Core",
+    "sendFunctions": {
+      "sendDeploy": {
+        "tabName": "🚀 Deploy New Contract",
+        "params": {
+          "value": {
+            "fieldTitle": "💰 Deployment Fee (TON)"
+          }
+        }
+      },
+      "send": {
+        "tabName": "💸 Send TON to Contract",
+        "params": {
+          "value": {
+            "fieldTitle": "💰 Amount to Send (TON)"
+          }
+        }
+      }
+    },
+    "getFunctions": {},
+    "definedTypes": {
+      "TaasConfig": {
+        "shownName": "⚙️ TaaS Core Configuration",
+        "properties": {
+          "0": {
+            "fieldTitle": "🔧 Configuration Parameter 1"
+          },
+          "1": {
+            "fieldTitle": "🔧 Configuration Parameter 2"
+          }
+        }
+      }
+    }
+  }
+}

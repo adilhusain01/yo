@@ -1,0 +1,145 @@
+{
+  "EscrowRegistry": {
+    "sendFunctions": {
+      "sendCreateAgreement": {
+        "value": {
+          "type": "bigint",
+          "optional": false
+        },
+        "tenant": {
+          "type": "Address",
+          "optional": false
+        },
+        "depositAmount": {
+          "type": "bigint",
+          "optional": false
+        },
+        "rentAmount": {
+          "type": "bigint",
+          "optional": false
+        },
+        "startDate": {
+          "type": "bigint",
+          "optional": false
+        },
+        "termLength": {
+          "type": "bigint",
+          "optional": false
+        }
+      },
+      "sendAcceptAgreement": {
+        "value": {
+          "type": "bigint",
+          "optional": false
+        },
+        "agreementId": {
+          "type": "bigint",
+          "optional": false
+        }
+      },
+      "sendDepositReceived": {
+        "value": {
+          "type": "bigint",
+          "optional": false
+        },
+        "agreementId": {
+          "type": "bigint",
+          "optional": false
+        },
+        "amount": {
+          "type": "bigint",
+          "optional": false
+        }
+      },
+      "sendClaimAtTermEnd": {
+        "value": {
+          "type": "bigint",
+          "optional": false
+        },
+        "agreementId": {
+          "type": "bigint",
+          "optional": false
+        }
+      },
+      "sendCancelAgreement": {
+        "value": {
+          "type": "bigint",
+          "optional": false
+        },
+        "agreementId": {
+          "type": "bigint",
+          "optional": false
+        }
+      },
+      "sendSetPaused": {
+        "value": {
+          "type": "bigint",
+          "optional": false
+        },
+        "paused": {
+          "type": "boolean",
+          "optional": false
+        }
+      }
+    },
+    "getFunctions": {
+      "getGetAgreement": {
+        "agreementId": {
+          "type": "bigint",
+          "optional": false
+        }
+      },
+      "getGetAgreementCounter": {},
+      "getGetContractInfo": {},
+      "getGetAgreementsByStatus": {
+        "status": {
+          "type": "bigint",
+          "optional": false
+        }
+      }
+    },
+    "path": "./wrappers/EscrowRegistry.ts",
+    "deploy": {
+      "canBeCreatedFromConfig": false,
+      "configType": {
+        "id": {
+          "type": "bigint",
+          "optional": false
+        }
+      }
+    },
+    "definedTypes": {
+      "EscrowRegistryConfig": {
+        "id": {
+          "type": "bigint",
+          "optional": false
+        }
+      }
+    }
+  },
+  "Taas": {
+    "sendFunctions": {
+      "sendDeploy": {
+        "value": {
+          "type": "bigint",
+          "optional": false
+        }
+      },
+      "send": {
+        "value": {
+          "type": "bigint",
+          "optional": false
+        }
+      }
+    },
+    "getFunctions": {},
+    "path": "./wrappers/Taas.ts",
+    "deploy": {
+      "canBeCreatedFromConfig": true,
+      "codeHex": "b5ee9c7241021e010009de00025aff008e88f4a413f4bcf2c80bed53208e983001d072d721d200d200fa4021103450666f04f86102f862e1ed43d9010e020271020401f1bf9f376a268690000c709698fe99ffa027d207d207d2069002ab0360bc72ac08080eb800080e8b836c68430020f7f554b98dca6d1cbf2f323117af319a45c09562da3b1d49f86e900e83cc6a246843001ca704edb7cb01f2fc281aad8f4d2bd153cf4c83b06f363ed71b4934201a85f0a7c2138716d9e363b403000c547610547658020120050802f5b940ded44d0d200018e12d31fd33ff404fa40fa40fa40d20055606c178e55810101d7000101d1706d8d0860041efeaa9731b94da397e5e64622f5e63348b812ac5b4763a93f0dd201d0798d448d08600394e09db6f9603e5f850355b1e9a57a2a79e990760de6c7dae36926840350be14f84270e25506db3c6c7180607007c8040260259f40f6fa192306ddf206e92306d8e29d0fa40fa40d37fd37fd33fd33fd307d401d0d37fd33f3010291028102710261025102410236c196f09e2002c206e92306d99206ef2d0806f296f09e2206e92306dde020120090c01f5b5d03da89a1a400031c25a63fa67fe809f481f481f481a400aac0d82f1cab020203ae000203a2e0db1a10c0083dfd552e63729b472fcbcc8c45ebcc6691702558b68ec7527e1ba403a0f31a891a10c00729c13b6df2c07cbf0a06ab63d34af454f3d320ec1bcd8fb5c6d24d0806a17c29f084e1c4aa0db678d8e300a01c66d71935308bb8ed82780402259f40f6fa192306ddf206e92306d8e29d0fa40fa40d37fd37fd33fd33fd307d401d0d37fd33f3010291028102710261025102410236c196f09e2206eb39e20206ef2d0806f2910285f0824ba9170e29130e30da4e830310b007681010101206ef2d0806f29c855805089ce16ce14cb7f12cb7fcb3fcb3fcb0701c8cb7f12cb3fcdc922103401206e953059f45a30944133f415e20101f1b4fd3da89a1a400031c25a63fa67fe809f481f481f481a400aac0d82f1cab020203ae000203a2e0db1a10c0083dfd552e63729b472fcbcc8c45ebcc6691702558b68ec7527e1ba403a0f31a891a10c00729c13b6df2c07cbf0a06ab63d34af454f3d320ec1bcd8fb5c6d24d0806a17c29f084e1c5b678d8e300d00022501feed44d0d200018e12d31fd33ff404fa40fa40fa40d20055606c178e55810101d7000101d1706d8d0860041efeaa9731b94da397e5e64622f5e63348b812ac5b4763a93f0dd201d0798d448d08600394e09db6f9603e5f850355b1e9a57a2a79e990760de6c7dae36926840350be14f84270e208925f08e006d70d1ff2e082210f044a8210742cfb03bae302218210f55cea03bae3022182103ecdf312bae3022182109e6d8f26ba1012141801ee31fa40d37fd37fd33fd33f30814d502cb3f2f4814f5524c200f2f48200f91023c200f2f4816f6a21c200f2f4817f09f823810e10a15230bef2f408a4f8427020f8232810475168060e55210807060504431380405029c855805089ce16ce14cb7f12cb7fcb3fcb3fcb0701c8cb7f12cb3fcdc9271037011100bc206e953059f45b30944133f417e2f84226413306c8553082100f8736915005cb1f13cb3fcececb7fc9c88258c000000000000000000000000101cb67ccc970fb0010465513c87f01ca0055605067cb1f14cb3f12f400cecececa00c9ed5401f231d33f30814d5028b3f2f42380402259f40f6fa192306ddf206e92306d8e29d0fa40fa40d37fd37fd33fd33fd307d401d0d37fd33f3010291028102710261025102410236c196f09e28200cc14216eb3f2f4206ef2d0806f2981107ff84229c705f2f48200b34d03c00013f2f41716151443307180405029c81300ec55805089ce16ce14cb7f12cb7fcb3fcb3fcb0701c8cb7f12cb3fcdc922103601206e953059f45b30944133f417e2f84214c859821028d201d55003cb1fcb3fcec9c88258c000000000000000000000000101cb67ccc970fb0010465513c87f01ca0055605067cb1f14cb3f12f400cecececa00c9ed5401e831d33fd37f30814d5029b3f2f42480402359f40f6fa192306ddf206e92306d8e29d0fa40fa40d37fd37fd33fd33fd307d401d0d37fd33f3010291028102710261025102410236c196f09e28200cc14216eb3f2f4206ef2d0806f29811c3803c00113f2f4813c3a5196ba19f2f4720180405099c81501a055805089ce16ce14cb7f12cb7fcb3fcb3fcb0701c8cb7f12cb3fcdc922103601206e953059f45b30944133f417e210571046445503db3cc87f01ca0055605067cb1f14cb3f12f400cecececa00c9ed541601ec2580402259f40f6fa192306ddf206e92306d8e29d0fa40fa40d37fd37fd33fd33fd307d401d0d37fd33f3010291028102710261025102410236c196f09e28200cc14216eb3f2f4206ef2d0806f293182009fbb02c00212f2f424a7058064a9045250a010471036738040c82806105b104a4313544ac01700b855805089ce16ce14cb7f12cb7fcb3fcb3fcb0701c8cb7f12cb3fcdc949305240206e953059f45b30944133f417e207c855208210b904948b5004cb1f12cb3fcb7fcb7fc9c88258c000000000000000000000000101cb67ccc970fb0003aae302218210d748a0aabae302218210096819ffba8e2f313706d200308165def84227c705f2f4104610354430c87f01ca0055605067cb1f14cb3f12f400cecececa00c9ed54e0018210946a98b6bae3025f08f2c082191b1d01fe31d33f30814d5028b3f2f42380402259f40f6fa192306ddf206e92306d8e29d0fa40fa40d37fd37fd33fd33fd307d401d0d37fd33f3010291028102710261025102410236c196f09e28200cc14216eb3f2f4206ef2d0806f29820098cb03c00313f2f48117abf8235354a0bef2f45305a1105810477480402806105b104a031a00fa50abc855805089ce16ce14cb7f12cb7fcb3fcb3fcb0701c8cb7f12cb3fcdc947705240206e953059f45b30944133f417e25055c8552082103177779f5004cb1f12cb3fcb7fcb7fc9c88258c000000000000000000000000101cb67ccc970fb0010465513c87f01ca0055605067cb1f14cb3f12f400cecececa00c9ed5401fe31d33f302380402259f40f6fa192306ddf206e92306d8e29d0fa40fa40d37fd37fd33fd33fd307d401d0d37fd33f3010291028102710261025102410236c196f09e28200cc14216eb3f2f4206ef2d0806f298200b544f8422ac705917f95f84229c705e2f2f482008efb23c00092337f9303c001e213f2f4171615144330751c00a280405029c855805089ce16ce14cb7f12cb7fcb3fcb3fcb0701c8cb7f12cb3fcdc9103512206e953059f45b30944133f417e2104610355034c87f01ca0055605067cb1f14cb3f12f400cecececa00c9ed5400aad33f30c8018210aff90f5758cb1fcb3fc91057104610354430f84270705003804201503304c8cf8580ca00cf8440ce01fa02806acf40f400c901fb00c87f01ca0055605067cb1f14cb3f12f400cecececa00c9ed542f6d4236"
+    },
+    "definedTypes": {
+      "TaasConfig": "{}"
+    }
+  }
+}
