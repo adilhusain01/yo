@@ -36,7 +36,7 @@ import {
     storeDeploy,
     Agreement,
     ContractInfo
-} from '../build/Taas/Taas_EscrowRegistry.js';
+} from '../build/Taas/Taas_EscrowRegistry';
 
 export type EscrowRegistryConfig = {
     id: bigint;
