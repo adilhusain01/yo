@@ -12,7 +12,7 @@ import {
 // Import from the generated file
 import { 
     Taas as GeneratedTaas
-} from '../build/Taas/Taas_Taas';
+} from '../build/Taas/Taas_Taas.js';
 
 export type TaasConfig = {};
 
