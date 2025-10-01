@@ -1,5 +1,5 @@
 {
-  "buildCommand": "cd .. && npm install --legacy-peer-deps && npm run build && cd dapp && npm run build",
+  "buildCommand": "cd .. && npm install --legacy-peer-deps && npx blueprint build Taas && cd dapp && npm run build",
   "devCommand": "npm run dev",
   "installCommand": "npm install"
 }
