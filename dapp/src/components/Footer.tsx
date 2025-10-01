@@ -16,7 +16,7 @@ function Footer() {
   return (
     <>
       <Center>
-        <a href="https://ton.org/">
+        <a href="#">
           <Flex align="center">
             <Text fontSize="14" fontWeight="normal" color="#C2C2C6" mr="5px" mt="15px">
               Built on
