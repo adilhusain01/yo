@@ -1,10 +1,21 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { NodeGlobalsPolyfillPlugin } from "@esbuild-plugins/node-globals-polyfill";
-import inject from "@rollup/plugin-inject";
+import { nodePolyfills } from 'vite-plugin-node-polyfills';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    nodePolyfills({
+      // Whether to include specific modules or all Node.js modules
+      include: ['buffer', 'process', 'util', 'stream', 'crypto'],
+      // Whether to polyfill Node.js globals (`global`, `process`, etc.)
+      globals: {
+        Buffer: true,
+        global: true,
+        process: true,
+      },
+    }),
+  ],
   base: process.env.GH_PAGES ? "/blueproject/" : "./",
   define: {
     global: "globalThis",
@@ -16,20 +27,5 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: ["buffer"],
-    esbuildOptions: {
-      define: {
-        global: "globalThis",
-      },
-      plugins: [
-        NodeGlobalsPolyfillPlugin({
-          buffer: true,
-        }),
-      ],
-    },
-  },
-  build: {
-    rollupOptions: {
-      plugins: [inject({ Buffer: ["buffer", "Buffer"] })],
-    },
   },
 });
